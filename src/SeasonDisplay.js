@@ -2,7 +2,7 @@ import React from 'react';
 
 const SeasonDisplay=props=>{
     return(
-        <div>Dispay serason</div>
+        <div>Dispay season</div>
     );
 };
 export default SeasonDisplay;
