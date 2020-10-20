@@ -20,15 +20,25 @@ class App extends React.Component{
         );
     }
     render(){
-        
-        return (
-            <div>
-            Latitude and longitude: {this.state.lat}, {this.state.lon}
-            <br/>
-            error: {this.state.errorMessage}
-            <SeasonDisplay/>
-        </div>
-        );
+        if(this.state.errorMessage && (!this.state.lat || !this.state.lon)){
+            return (
+                <div>
+                    Error: {this.state.errorMessage}
+                </div>
+            );
+        }
+        if(!this.state.errorMessage && this.state.lon && this.state.lat){
+            return(
+                <div>
+                    Longitude: {this.state.lon}
+                    <br/>
+                    Latitude: {this.state.lat}
+                </div>
+            );
+        }
+        else{
+            return <div>Loading</div>;
+        }
     }
 }
 
