@@ -1,6 +1,8 @@
 import './SeasonDisplay.css'
 import React from 'react';
 
+
+//dic variable
 const seasoncongif={
     summer:{
         text:"let's hit the beach",
@@ -12,6 +14,7 @@ const seasoncongif={
     }
 };
 
+//function to return season 'summer or winter'
 const getSeason=(lat,month)=>{
     if(month>2 && month<9){
         return lat>0?'summer':'winter';
@@ -19,6 +22,7 @@ const getSeason=(lat,month)=>{
         return lat>0?'winter':'summer';
     }
 };
+
 
 const SeasonDisplay=props=>{
     const season=getSeason(props.lat,new Date().getMonth());

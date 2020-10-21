@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import SeasonDisplay from './SeasonDisplay';
+import Loader from './Loader';
 
 class App extends React.Component{
     state={lat: null, lon: null, errorMessage: ''};
@@ -24,7 +25,7 @@ class App extends React.Component{
         if(!this.state.errorMessage && this.state.lon && this.state.lat){
             return <SeasonDisplay lon={this.state.lon} lat={this.state.lat}/>;
         }
-        return <div>Loading</div>;
+        return <Loader text="Please allow location"/>;
     }
 
     render(){
